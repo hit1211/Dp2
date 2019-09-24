@@ -11,6 +11,7 @@ if($conn->connect_error) {
 	die("Connection Failed: " . $conn->connect_error);
 }
 //Setting variables from form
+
 if (isset ($_POST["pName"]) && isset ($_POST["item_id"]) && isset ($_POST["item_quantity"]) && isset ($_POST["item_price"]) && isSet($_POST["date_purchased"])) {
 	$pName = $_POST["pName"];
 	$itemID = $_POST["item_id"];
