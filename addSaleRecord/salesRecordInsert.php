@@ -10,6 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if($conn->connect_error) {
 	die("Connection Failed: " . $conn->connect_error);
 }
+//Setting variables from form
 
 if (isset ($_POST["pName"]) && isset ($_POST["item_id"]) && isset ($_POST["item_quantity"]) && isset ($_POST["item_price"]) && isSet($_POST["date_purchased"])) {
 	$pName = $_POST["pName"];
@@ -20,6 +21,7 @@ if (isset ($_POST["pName"]) && isset ($_POST["item_id"]) && isset ($_POST["item_
 	$errMsg = "";
   
 	//item id validation
+	
 	if ($itemID=="") {
 		$errMsg .= "<h2>You must enter the item ID.</h2>";
 	}
@@ -28,6 +30,7 @@ if (isset ($_POST["pName"]) && isset ($_POST["item_id"]) && isset ($_POST["item_
 	}
 
 	//item quantity validation
+	
 	if ($itemQuantity=="") {
 		$errMsg .= "<h2>You must enter the item Quantity.</h2>";
 	}
@@ -36,6 +39,7 @@ if (isset ($_POST["pName"]) && isset ($_POST["item_id"]) && isset ($_POST["item_
 	}
 
 	//purchaser name validation
+	
 	if ($pName=="") {
 		$errMsg .= "<h2>You must enter the purchaser name.</h2>";
 	}
@@ -52,6 +56,7 @@ if (isset ($_POST["pName"]) && isset ($_POST["item_id"]) && isset ($_POST["item_
 		$count = mysqli_num_rows($check);
 		
 		//echo "$count and $itemID";
+		
 		if ($result1 && ($itemID <= $count)) {
 			$row = mysqli_fetch_row($result1);
 			$itemName = $row[1];
