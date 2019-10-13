@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sales Record</title>
+</head>
+
+<body>
+<h1>Pharmmacy Record Save</h1>
+
+<fieldset>
+<form id="recordForm" action="salesRecordInsert.php" method="post">
+	<p>Name of purchaser: <input type="text" name="pName" id="pName"/></p>
+	<p>Item ID: <input type="text" name="item_id" id="item_id"/></p>
+	<p>Quantity: <input type="text" name="item_quantity" id="item_quantity"/></p>
+	<p>Price: <input type="text" name="item_price" id="item_price"/></p>
+	<p>Date: <input type="date" name="date_purchased" id="date_purchased" required /> </p>
+  <input type="submit" value="Add Record"/>
+</form>
+</fieldset>
+</body>
+</html>
