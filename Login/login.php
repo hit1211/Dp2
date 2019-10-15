@@ -21,9 +21,6 @@ $count = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result);
 
 $employeename= $row['FirstName'] . " " . $row['LastName'];
-#$_SESSION["Employee"] = $employeename;
-
-#$test = $_SESSION["Employee"];
 
 if ($count == 1) {
 	$_SESSION["Employee"] = $employeename;
