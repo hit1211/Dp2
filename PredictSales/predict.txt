@@ -1,0 +1,30 @@
+<?php 
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "salesdb";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if($conn->connect_error) {
+	die("Connection Failed: " . $conn->connect_error);
+}
+
+$Selection = $_POST["Selection"];
+
+if ($Selection == 1) {
+	$findItems = "SELECT ItemID, ItemName, SUM(ItemQuantity) as UnitsSold ItemQuant FROM salesrecords WHERE YEAR(Date)=YEAR(CURDATE()) and MONTH(Date)=MONTH(CURDATE());";
+	$result = mysqli_query($conn, $findItems);
+	while ($row = mysqli_fetch_row($result))
+	{
+		$rows[] = $row;
+	}
+	print_r($rows);
+}
+
+
+if ($Selection == 2) {
+
+
+}
