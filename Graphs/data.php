@@ -1,4 +1,4 @@
-<?php
+<?php 
 //setting header to json_decode
 header('Content-Type: application/json');
 
